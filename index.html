@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Game Online</title>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:'#0e1c29',
+            secondary:'#F2AA4CFF'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body> 
+  <header class='bg-primary flex justify-between p-5  min-w-screen
+    flex-col  gap-5 md:flex-row '>
+        <h1 class='text-secondary md:text-2xl text-xl '>Online Gaming</h1>
+        <div class='flex gap-5 cursor-pointer'>
+        <span class='text-white text-md md:text-xl '>Home</span>
+        <span class='text-white text-md md:text-xl'>Free Slots</span>
+        <span class='text-white text-md md:text-xl'>Free Games</span>
+        </div>
+    </header>
+    <div class='bg-secondary w-full h-2'></div>
+     <div class='h-[400px] md:h-[700px] w-full  relative '>
+        <video 
+          autoplay
+          loop
+          src="./assets/mylivewallpapers.com-Ghost-Hoodie-2560X1440.mp4"
+          class='absolute object-cover h-full w-full t-0 l-0 b-0 r-0 -z-1'
+        ></video>
+        <div class='absolute z-1 h-full w-full flex justify-center items-center flex-col'>
+        <h1 class='text-secondary text-5xl md:text-9xl font-bold font-mono m-2 '>Game on!</h1>
+        <p class='  w-[70%]  text-white text-center text-bold md:text-xl text-md '>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi itaque nam non qui iste ex? Veritatis et magni facilis, nemo sit aspernatur vel alias quam ab vitae, quas sint facere.</p>
+        </div>
+    </div>
+    <div class='bg-secondary w-full h-2'></div>
+          <div
+          class=' py-10 px-5 md:px-0 flex gap-5 justify-center items-center flex-wrap'
+           id="container" >
+    </div>
+    <div class='bg-[#F2AA4CFF] w-full h-1.5 '></div>
+    
+    <div class='bg-[#0e1c29] px-2 py-4 flex justify-between  md:flex-row flex-col'>
+      <div class='h-full  md:p-5 p-3'>
+      <h1 class='md:text-5xl text-xl text-center text-[#F2AA4CFF] font-mono font-bold mb-2'>PROGAMING.COM</h1>
+      <p class='text-white font-mono text-center'>ALL RIGHTS RESERVED ProGaming.com 2023©</p>
+      </div>
+    <div class='h-full p-5 md:w-[70%] w-full text-center md:text-left'>
+      <p class='w-full text-white text-sm font-mono'>Elixir slots is an online gaming platform that offers a variety of free games. Please be aware that this website does not feature any real-money games or opportunities to win prizes or real money in the future. All the content and games on the site are copyrighted and belong to their respective owners.</p>
+    <div class='flex md:gap-4 gap-2  w-full mt-3  items-center justify-center'>
+    <Link href="./">
+      <span class=' uppercase md:text-lg text-md font-bold text-[#F2AA4CFF]'>Home</span>
+      </Link>
+      <Link href="/terms">
+      <span class=' uppercase md:text-lg text-md font-bold text-[#F2AA4CFF]'>terms & privacy </span>
+      </Link>
+      <Link href="./policy">
+      <span class=' uppercase md:text-lg text-md font-bold text-[#F2AA4CFF]'>Private Policy</span>
+      </Link>
+    </div>
+    </div>
+    </div>
+    <script>
+      //---------------------------------------raw data---------
+        const data = [
+          {
+            id: 1,
+            gameName: "Unico.io",
+            imgsrc: "./assets/geometry.png",
+            href:"http://EV.io"
+          },
+          {
+            id: 2,
+            gameName: "Unico.io",
+            imgsrc: "./assets/geometry.png",
+            href: "http://Yorg3.io"
+          },
+          {
+            id: 3,
+            gameName: "Unico.io",
+            imgsrc: "./assets/geometry.png",
+            href: "http://Shootup.io"
+          },
+          {
+            id: 4,
+            gameName: "Unico.io",
+            imgsrc: "./assets/geometry.png",
+            href: "http://Shapez.io"
+          },
+          {
+            id:5,
+            gameName: "Unico.io",
+            imgsrc: "./assets/geometry.png",
+            href: "http://YoHoHo.io"
+          },
+        ]
+        const imageContainer = document.getElementById('container');
+        data.forEach((item)=>{
+        const newDiv = document.createElement('div');
+        const divOne=document.createElement('div')
+        const divTwo= document.createElement('div')
+        newDiv.className='md:w-[400px] md:h-[200px] h-[150px] bg-white border rounded-xl shadow-md shadow-black flex'
+        divOne.className='h-full w-[40%] md:p-4 p-2'
+        divTwo.className='h-full w-[60%] md:p-4 p-2 flex justify-center item-center flex-col gap-3'
+        const imgElement = document.createElement('img');
+        imgElement.className='w-full h-full object-cover'
+        const titleElement = document.createElement('p');
+        titleElement.className='text-center p-2 md:text-3xl text-lg font-bold uppercase'
+        const contButton=document.createElement('button')
+        contButton.textContent='play online'
+        contButton.className='w-full p-2 border rounded-md bg-[#0e1c29] text-[#F2AA4CFF] text-md md:text-lg'
+        contButton.addEventListener(('click'),()=>{
+          console.log("a",item.id)
+          const a=document.createElement('a')
+          window.location.href=item.href
+        })
+        imgElement.src = item.imgsrc;
+        titleElement.textContent = item.gameName;
+        divOne.appendChild(imgElement)
+        newDiv.appendChild(divOne);
+        divTwo.appendChild(titleElement)
+        divTwo.appendChild(contButton)
+        newDiv.appendChild(divTwo)
+        imageContainer.appendChild(newDiv);
+        })
+
+    </script>
+</body>
+</html>
